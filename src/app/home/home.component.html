@@ -6,7 +6,7 @@
             <h4 class="card-title text-center">
               <img class="logoCharlie animated zoomIn" [src]="logoImg" />
             </h4>
-            <form (ngSubmit)="buscaCachorros()" [formGroup]="homeForm" novalidate>
+            <!-- <form (ngSubmit)="buscaCachorros()" [formGroup]="homeForm" novalidate>
               <div class="form-group animated slideInUp">
                 <label class="d-block">
                   <input type="text" class="form-control" formControlName="racaCachorro"
@@ -14,15 +14,15 @@
                   <small [hidden]="homeForm.controls.racaCachorro.valid || homeForm.controls.racaCachorro.untouched " class="text-danger">
                     Para realizar busca é nescessario digitar o nome da raça do cachorro.
                   </small>
-                  <!-- <small [hidden]="racaCachorro.errors.dogBreedInvalid" class="text-danger">
+                  <small [hidden]="racaCachorro.errors.dogBreedInvalid" class="text-danger">
                     Desculpe não encontramos essa raça! Verifique o nome da raça!
-                  </small> -->
+                  </small>
                 </label>
                 <button class="btn btn-primary w-100" type="submit" [disabled]="homeForm.invalid">
                     <span>Buscar</span>
                   </button>
               </div>
-            </form>
+            </form> -->
           </div>
         </div>
       </div>

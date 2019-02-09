@@ -1,25 +1,41 @@
-
 <header>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand">
       <i class="fas fa-paw"></i>
-    {{title}}</a>
-  <button class="navbar-toggler" type="button" type="button" aria-controls="navbar-menu" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div id="navbar-menu" class="collapse navbar-collapse float-xs-none">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link nav-label" routerLink="/home" routerLinkActive="active">
-          <i class="fas fa-home"></i>
-        <span>Home</span>
-        </a>
-        <a class="nav-item nav-link nav-label" routerLink="/carrinho" routerLinkActive="active">
-          <i class="fas fa-cart-plus"></i>
+      {{title}}</a>
+    <button class="navbar-toggler" type="button" type="button" aria-controls="navbar-menu"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbar-menu" class="collapse navbar-collapse float-xs-none">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-item nav-link nav-label" routerLink="/home" routerLinkActive="active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav mr-auto">
+        <li class="nav-item">
+          <form class="form-inline form-header" (ngSubmit)="buscaCachorros()" [formGroup]="buscaform">
+            <input class="form-control input-navbar" type="search" formControlName="racaCachorro"
+              placeholder="Digite a raça do cachorro...">
+            <button class="btn btn-primary w-10" type="submit">Pesquisar</button>
+          </form>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class="nav-item nav-link nav-label" routerLink="/carrinho" routerLinkActive="active">
+            <i class="fas fa-cart-plus"></i>
             <span>Carrinho</span>
           </a>
-   
+        </li>
+      </ul>
     </div>
-  </div>
-</nav>
+  </nav>
+  <p>
+    <ngb-alert *ngIf="erro" type="danger" (close)="close">Para realizar busca é nescessario digitar o nome da raça do cachorro.</ngb-alert>
+  </p>
 </header>
