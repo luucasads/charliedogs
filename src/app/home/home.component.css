@@ -1,0 +1,44 @@
+:host-context {
+    color: white;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+ 
+  }
+
+.card {
+    background-color: transparent;
+    border: 0px;
+  }
+  
+  #language-dropdown {
+    background-color: transparent;
+    border: 0px;
+  }
+  
+  .form-control {
+    background-color: transparent;
+    color: black;
+  }
+  
+  .btn-primary {
+    border-color: rgb(7, 134, 156);
+    color:  rgb(7, 134, 156);
+    font-weight: bold;
+    background-color: transparent;
+  }
+  
+  .logoCharlie {
+    height: 500px;
+    margin-bottom: 50px;
+  }
+  
+  .search-box {
+    color:  rgb(7, 134, 156);
+  }
+  
+  .ng-invalid.ng-touched:not(form) {
+    border-left: 4px solid theme-color("danger");
+  }
