@@ -12,7 +12,7 @@ export const environment = {
     'en-US',
     'pt-BR'
   ],
-  apiURL: ""
+  apiURL: 'http://localhost:8080/api'
 };
 
 

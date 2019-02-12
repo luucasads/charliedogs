@@ -1,3 +1,51 @@
-<p>
-  carrinho works!
-</p>
+<div *ngIf="!exibeCarrinho">
+  <div class="search-box">
+    <div class="container fadeIn">
+      <div class="card col-md-6 mt-3 mx-auto animated fadeIn">
+        <h2 class="card-title text-center"><span>Carrinho Vazio!</span></h2>
+        <div class="card-body">
+          <h4 class="card-title text-center">
+            <img class="carrinho-vazio animated zoomIn" src='../../assets/carrinho-vazio.png' />
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Inicio Carrinho -->
+<table *ngIf="exibeCarrinho" class="table">
+  <thead>
+    <tr>
+      <th>Raça</th>
+      <th>Descrição</th>
+      <th>Quantidade</th>
+      <th>Valor</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cachorro of listaCachorros" class="animated fadeInLeft">
+      <td>{{cachorro.raca}}</td>
+      <td>{{cachorro.caracteristicas}}</td>
+      <td> <input type="number" class="form-control text-center input-quantidade"> </td>
+      <td>R$ {{cachorro.valor}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="removerCachorro(cachorro)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr class="animated fadeInLeft">
+      <td><a routerLink="/checkout" routerLinkActive="active" class="btn btn-warning"><i class="fa fa-angle-left"></i>
+          Continuar Comprando</a></td>
+      <td></td>
+      <td></td>
+      <td><strong>Total: R${{ carrinho.valorTotal }}</strong></td>
+      <td><a routerLink="/checkout" routerLinkActive="active" class="btn btn-success btn-footer-checkout">Finalizar
+          Compra <i class="fa fa-angle-right"></i></a></td>
+    </tr>
+  </tfoot>
+</table>
+<!-- Fim Carrinho -->

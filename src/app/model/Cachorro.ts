@@ -1,7 +1,6 @@
 export interface Cachorro {
-    id:number;
+    id:string;
     raca: string,
-    porte: string,
-    dataNascimento: string,
-    caracteristicas: string
+    caracteristicas: string,
+    valor: number
 }

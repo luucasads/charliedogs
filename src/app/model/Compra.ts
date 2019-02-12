@@ -4,7 +4,7 @@ import { Comprador } from './Comprador';
 export interface Compra {
     id: string,
     comprador: Comprador;
-    cachorro: Array<Cachorro>;
+    cachorros: Array<Cachorro>;
     valorCompra: any;
     quantidade: number
 

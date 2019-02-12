@@ -1,0 +1,98 @@
+<p>
+    <ngb-alert *ngIf="erro" type="danger" [dismissible]="false">Prencha os campos obrigátorios identificados por * para
+        finalizar a compra.</ngb-alert>
+</p>
+<p>
+    <ngb-alert *ngIf="sucesso" type="sucess" [dismissible]="false">Compra cadastrada com sucesso.</ngb-alert>
+</p>
+<div class="container container-custom">
+    <div class="row">
+        <!-- INICIO INFO CACHORROS -->
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Seu Carrinho</span>
+            </h4>
+            <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                        <small class="text-muted">{{cachorro.raca}}</small>
+                    </div>
+                    <span class="text-muted">{{carrinho.quantidade}}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                        <small class="text-muted">{{cachorro.raca}}</small>
+                    </div>
+                    <span class="text-muted">{{carrinho.quantidade}}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Total (R$)</span>
+                    <strong>R${{carrinho.ValorTotal}}</strong>
+                </li>
+            </ul>
+        </div>
+        <!-- FIM INFO CACHORROS -->
+
+        <!-- INICIO INFO COMPRADOR -->
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Informações Finais</h4>
+            <form [formGroup]="checkoutform" (ngSubmit)="cadastraCompra()">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">Nome*</label>
+                        <input type="text" class="form-control" id="Nome" formControlName="nome" required="">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName">Sobrenome*</label>
+                        <input type="text" class="form-control" id="Sobrenome" formControlName="sobrenome">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col-md-6 mb-3">
+                        <label for="address">CPF*</label>
+                        <input type="text" class="form-control" id="Cpf" formControlName="cpf">
+                    </div>
+                    <div class=" col-md-6 mb-3">
+                        <label for="address">Email*</label>
+                        <input type="text" class="form-control" id="Email" formControlName="email">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col-md-6 mb-3">
+                        <label for="address">Rua*</label>
+                        <input type="text" class="form-control" id="Rua" formControlName="rua">
+                    </div>
+                    <div class=" col-md-2 mb-3">
+                        <label for="address">Numero*</label>
+                        <input type="text" class="form-control" id="Numero" formControlName="numero">
+                    </div>
+                    <div class=" col-md-4 mb-3">
+                        <label for="address">Bairro*</label>
+                        <input type="text" class="form-control" id="Bairro" formControlName="bairro">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="address">Complemento<span class="text-muted">(Opcional)</span></label>
+                    <input type="text" class="form-control" id="Complemento" formControlName="complemento">
+                </div>
+                <div class="row">
+                    <div class=" col-md-4 mb-3">
+                        <label for="address">Cidade*</label>
+                        <input type="text" class="form-control" id="Cidade" formControlName="cidade">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="country">Estado*</label>
+                        <input type="text" class="form-control" id="Estado" formControlName="estado">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="zip">CEP*</label>
+                        <input type="text" class="form-control" id="CEP" formControlName="cep">
+                    </div>
+                </div>
+                <!-- FIM INFO COMPRADOR -->
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Finalizar</button>
+            </form>
+        </div>
+    </div>
+</div>

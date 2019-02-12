@@ -1,6 +1,7 @@
 export interface Comprador {
-    id: number,
+    id: string,
     nome: string,
+    sobrenome: string,
     cpf: string,
     email: string,
     cep: string,

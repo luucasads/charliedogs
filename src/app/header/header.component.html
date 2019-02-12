@@ -1,10 +1,9 @@
-<header>
+<header *ngIf="!exibeHeader">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand">
       <i class="fas fa-paw"></i>
       {{title}}</a>
-    <button class="navbar-toggler" type="button" type="button" aria-controls="navbar-menu"
-      aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" type="button" aria-controls="navbar-menu" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div id="navbar-menu" class="collapse navbar-collapse float-xs-none">
@@ -19,9 +18,8 @@
       <ul class="nav navbar-nav mr-auto">
         <li class="nav-item">
           <form class="form-inline form-header" (ngSubmit)="buscaCachorros()" [formGroup]="buscaform">
-            <input class="form-control input-navbar" type="search" formControlName="racaCachorro"
-              placeholder="Digite a raça do cachorro...">
-            <button class="btn btn-primary w-10" type="submit">Pesquisar</button>
+            <input class="form-control input-navbar" type="search" formControlName="racaCachorro" placeholder="Digite a raça do cachorro...">
+            <button class="btn btn-primary" type="submit">Pesquisar</button>
           </form>
         </li>
       </ul>
@@ -36,6 +34,7 @@
     </div>
   </nav>
   <p>
-    <ngb-alert *ngIf="erro" type="danger" (close)="close">Para realizar busca é nescessario digitar o nome da raça do cachorro.</ngb-alert>
+    <ngb-alert *ngIf="erro" type="danger" [dismissible]="false">Para realizar busca é nescessario digitar o nome da
+      raça do cachorro.</ngb-alert>
   </p>
 </header>

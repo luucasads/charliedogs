@@ -1,3 +1,5 @@
+import { CachorroService } from './services/cachorro.service';
+import { CheckoutModule } from './checkout/checkout.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -7,12 +9,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CarrinhoComponent } from './carrinho/carrinho.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { CommonModule } from '@angular/common';
+import { CarrinhoModule } from './carrinho/carrinho.module';
 
 @NgModule({
-  declarations: [AppComponent, CarrinhoComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     HeaderModule,
@@ -20,9 +21,11 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     HomeModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    CarrinhoModule,
+    CheckoutModule
   ],
-  providers: [],
+  providers: [CachorroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
