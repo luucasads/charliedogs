@@ -1,0 +1,28 @@
+:host-context {
+  color: black;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+
+}
+
+.card {
+  background-color: transparent;
+  border: 0px;
+}
+  
+.carrinho-vazio {
+  height: 400px;
+  margin-right: 100px;
+}
+
+  .btn-footer-checkout {
+    margin-left: 53%
+ } 
+
+ .input-quantidade {
+  width: 100px;
+}
+

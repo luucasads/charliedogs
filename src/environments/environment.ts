@@ -3,8 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  logoImg: '../../assets/charlielogo.png',
+  title: 'Charlie & Dogs',
+  production: false,
+  version: '(dev)',
+  defaultLanguague: 'pt-Br',
+  supportedLanguages: [
+    'en-US',
+    'pt-BR'
+  ],
+  apiURL: 'http://localhost:8080/api'
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -1,0 +1,43 @@
+<div *ngIf="!exibeResultadoBusca">
+  <div class="search-box">
+    <div class="container fadeIn">
+      <div class="card col-md-6 mt-3 mx-auto animated fadeIn">
+        <h2 class="text-center"><span>Bem Vindo ao Charlie & Dogs!</span></h2>
+        <h6 class="text-center">Para realizar a compra de um animalzinho realiza a busca por raça.</h6>
+        <div class="card-custom">
+          <h4 class="card-title text-center">
+            <img class="logoCharlie animated zoomIn" [src]="logoImg" />
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<p>
+  <ngb-alert *ngIf="erro" type="danger" [dismissible]="false">Para selecionar o cachorro é necessário informar a
+    quantidade!</ngb-alert>
+</p>
+<table *ngIf="exibeResultadoBusca" class="table">
+  <thead>
+    <tr>
+      <th>Raça</th>
+      <th>Descrição</th>
+      <th>Quantidade</th>
+      <th>Valor</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="animated fadeInLeft">
+      <td>{{ cachorro.caracteristicas }}</td>
+      <td>{{ cachorro.caracteristicas }}</td>
+      <td> <input type="number" class="form-control text-center input-quantidade" formControlName="quantidadeCachorros"></td>
+      <td>R${{ cachorro.valor }}</td>
+      <td>
+        <button class="btn btn-success" (click)="getCachorroPorId(id)">
+          <span><i class="fa fa-check"></i> Selecionar</span>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

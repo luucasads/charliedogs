@@ -1,0 +1,26 @@
+:host-context {
+    color: black;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+ 
+  }
+
+.card {
+    background-color: transparent;
+    border: 0px;
+  }
+    
+  .logoCharlie {
+    height: 500px;
+  }
+
+  .input-quantidade {
+    width: 100px;
+  }
+
+  .card-custom{
+    padding: 0;
+  }
